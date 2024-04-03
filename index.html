@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Выбери занятие</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/app.css">
+    </head>
+    <body>
+        <div class="content">
+            <div class="deal" id="deal">{   }</div>
+            <div class="btn" id="btn">spin</div>
+        </div>
+    </body>
+
+    <script>
+        var variants = [
+            'Самолетик',
+            'Писать песню',
+            'Писать текст',
+            'Тренить на инструменте',
+            'Писать сайт для мероприятий',
+            'Сосавить список источников мероприятий',
+            'Петь песни',
+            'Погулять',
+            'Придумать движ',
+            'Тренировка',
+            'Мед стартап',
+            'Дизайн-проект квартиры',
+            'Убраться дома',
+            'Приготовить поесть',
+            'Как собрать свою студию',
+        ];
+
+        document.getElementById('btn').addEventListener('click', function (event) {
+            let preloadText = 'Выбираем...'
+
+            let index = Math.floor(Math.random() * variants.length)
+
+            let deal = document.getElementById('deal');
+
+            deal.innerHTML = preloadText
+
+            setTimeout(function () {
+                deal.innerHTML = variants[index]
+            }, 1500)
+        })
+    </script>
+</html>
